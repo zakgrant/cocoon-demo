@@ -1,0 +1,20 @@
+h1 Listing projects
+
+table class='zebra-striped'
+  thead
+    tr
+      th Name
+      th Actions
+  tbody
+    - @projects.each do |project|
+      tr
+        td= project.name
+        td
+          = link_to 'Show', project
+          = '|'
+          = link_to 'Edit', edit_project_path(project)
+          = '|'
+          = link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
+
+
+= link_to 'New Project', new_project_path

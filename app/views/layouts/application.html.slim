@@ -1,0 +1,22 @@
+doctype 5
+html
+  head
+    title
+      Cocoon Nested Form Demo (using Simple Form and slim)
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag "application"
+    = csrf_meta_tag
+
+body style='padding-top:40px;'
+  .topbar
+    .topbar-inner
+      .container
+        h3
+          = link_to "Cocoon Demo", root_url
+        ul.nav
+          li
+            =link_to "Home", root_url
+          li
+            =link_to "About", root_url
+  .container
+    = yield

@@ -1,0 +1,15 @@
+= simple_form_for @project, :wrapper => 'inline' do |f|
+  = f.input :name, :hint => 'The title of your project'
+
+  ul.tabs
+    li.active
+      = link_to 'Tasks (:has_many --nested)', '#tasks'
+
+  .tab-content
+    #tasks.active
+      = f.simple_fields_for :tasks, :wrapper => 'inline' do |task|
+        = render 'task_fields', :f => task
+      .links
+        = link_to_add_association 'add task', f, :tasks, :render_options => { :wrapper => 'inline' }
+  .actions
+    = f.button :submit, :disable_with => 'Please wait ...'
