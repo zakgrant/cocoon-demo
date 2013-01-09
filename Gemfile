@@ -9,8 +9,6 @@ gem 'sass-rails', "~> 3.2.5"
 gem 'coffee-script'
 gem 'uglifier'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
-
 #gem 'cocoon', :path => '../cocoon'
 gem 'cocoon'
 
