@@ -44,3 +44,7 @@ gem "slim"
 gem "slim-rails", :require => false
 
 gem 'newrelic_rpm'
+
+group :staging, :production do
+  gem 'pg'
+end
